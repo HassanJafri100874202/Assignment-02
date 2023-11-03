@@ -38,5 +38,14 @@ app.use(function(err, req, res, next) {
   res.status(err.status || 500);
   res.render('error');
 });
+const express = require('express');
+const path = require('path');
 
-module.exports = app;
+const app = express();
+const port = process.env.PORT || 3000; // Use the environment variable PORT or default to 3000
+
+
+app.listen(port, () => {
+    console.log(`Server is running on http://localhost:${port}`);
+});
+
